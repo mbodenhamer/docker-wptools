@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$@" ]; then
+if [ $# -eq 0 ]; then
     trap exit SIGTERM
 
     while true; do
