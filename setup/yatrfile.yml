@@ -1,0 +1,28 @@
+#-------------------------------------------------------------------------------
+macros:
+  dest: /usr/local/share/php
+
+#-------------------------------------------------------------------------------
+tasks:
+  install:
+    - "mkdir {{dest}}"
+    - install-wpcli
+    - install-composer
+    - test-wpcli
+    - test-composer
+
+  install-wpcli:
+    - curl -sSfLJ -o "{{dest}}/wp-cli.phar" https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    - chmod +x "{{dest}}/wp-cli.phar"
+    - ln -s "{{dest}}/wp-cli.phar" /usr/local/bin/wp
+
+  install-composer:
+    - curl -sS https://getcomposer.org/installer | php
+    - chmod +x composer.phar
+    - mv composer.phar "{{dest}}/"
+    - ln -s "{{dest}}/composer.phar" /usr/local/bin/composer
+
+  test-wpcli: wp --allow-root cli version
+  test-composer: composer -V
+
+#-------------------------------------------------------------------------------

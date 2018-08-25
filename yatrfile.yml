@@ -1,0 +1,18 @@
+#-------------------------------------------------------------------------------
+include:
+  - "{{urlbase}}/git/operations.yml"
+  - "{{urlbase}}/docker/automated_build.yml"
+  - "{{urlbase}}/python/packages.yml"
+
+#-------------------------------------------------------------------------------
+macros:
+  urlbase: https://raw.githubusercontent.com/mbodenhamer/yatrfiles/master/yatrfiles
+  name: wptools
+  version: "0.1"
+
+  example_base: "{{run_prefix}} {{image}}:latest"
+
+#-------------------------------------------------------------------------------
+tasks: {}
+
+#-------------------------------------------------------------------------------

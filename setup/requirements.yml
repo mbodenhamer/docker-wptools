@@ -1,0 +1,13 @@
+prod:
+  apt:
+    - build-essential
+    - mariadb-client
+    - mongo-tools
+    - php-cli
+    - php-curl
+    - php-json
+    - php-mcrypt
+    - php-mongodb
+    - php-mysql
+    - php-xml
+    - zip
