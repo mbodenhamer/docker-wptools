@@ -37,3 +37,14 @@ load test_helpers
     [[ ${lines[0]} =~ "mongodump" ]]
     [[ $status = 0 ]]
 }
+
+@test "[$TEST_FILE] Check if python packages are installed" {
+    run launch python -c "import pymongo"
+    [[ $status = 0 ]]
+
+    run launch python -c "import mongoengine"
+    [[ $status = 0 ]]
+
+    run launch python -c "import sqlalchemy"
+    [[ $status = 0 ]]
+}

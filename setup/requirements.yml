@@ -11,3 +11,8 @@ prod:
     - php-mysql
     - php-xml
     - zip
+
+  pip:
+    - mongoengine
+    - pymongo
+    - SQLAlchemy
